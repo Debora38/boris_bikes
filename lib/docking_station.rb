@@ -17,7 +17,11 @@ class DockingStation
   end
 
   def dock(bike)
-    @bike_arr << bike
+    if @bike_arr.count >= 20
+      raise "Already full"
+    else
+      @bike_arr << bike
+    end
   end
 
 end
