@@ -21,6 +21,10 @@ describe DockingStation do
     end
   end
 
+#  it 'should allow another argument to be passed to dock' do
+#    is_expected.to respond_to(:dock).with(2).argument
+#  end
+
   it "should tell me that there is a bike" do
     expect(subject.dock(Bike.new)).not_to be :empty
   end
