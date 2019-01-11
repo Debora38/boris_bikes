@@ -6,8 +6,9 @@ class DockingStation
 
   DEFAULT_CAPACITY = 20
 
-  def initialize
+  def initialize(capacity = DEFAULT_CAPACITY)
     @bike_arr = []
+    @capacity = capacity
   end
 
   def release_bike
@@ -26,6 +27,7 @@ class DockingStation
     end
   end
 
+private
   def full?
     @bike_arr.count >= DEFAULT_CAPACITY
   end

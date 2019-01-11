@@ -25,4 +25,18 @@ describe DockingStation do
     expect(subject.dock(Bike.new)).not_to be :empty
   end
 
+  it "allows Capacity to return an Integer" do
+    expect(subject.instance_variable_get(:@capacity)).to be_kind_of(Integer)
+  end
+
+  it "allows for Capacity to be set to an arbitrary integer" do
+    bigger_station = DockingStation.new(40)
+    expect(bigger_station.instance_variable_get(:@capacity)).to eq(40)
+  end
+
+  it "makes Capacity default to DEFAULT_CAPACITY when no args are passed" do
+    expect(subject.instance_variable_get(:@capacity)).to eq(DockingStation::DEFAULT_CAPACITY)
+  end
+
+
 end
