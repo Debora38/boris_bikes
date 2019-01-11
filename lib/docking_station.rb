@@ -4,6 +4,8 @@ class DockingStation
 
   attr_reader :bike_arr
 
+  DEFAULT_CAPACITY = 20
+
   def initialize
     @bike_arr = []
   end
@@ -25,7 +27,7 @@ class DockingStation
   end
 
   def full?
-    @bike_arr.count >= 20
+    @bike_arr.count >= DEFAULT_CAPACITY
   end
 
   def empty?

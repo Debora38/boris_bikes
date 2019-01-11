@@ -14,7 +14,7 @@ describe DockingStation do
     arg_bike = Bike.new
 
     is_expected.to respond_to(:dock).with(1).argument
-    if subject.bike_arr.count == 20
+    if subject.bike_arr.count == DockingStation::DEFAULT_CAPACITY
       expect { subject.dock(arg_bike) }.to raise_error('Already full')
     else
       expect(subject.dock(arg_bike).last).to be_kind_of(Bike)
