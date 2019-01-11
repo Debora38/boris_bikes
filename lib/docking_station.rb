@@ -9,7 +9,7 @@ class DockingStation
   end
 
   def release_bike
-    if @bike_arr.empty?
+    if empty?
       raise 'No bikes left'
     else
       @bike_arr.pop
@@ -17,14 +17,13 @@ class DockingStation
   end
 
   def dock(bike)
-    if @bike_arr.full?
+    if full?
       raise "Already full"
     else
       @bike_arr << bike
     end
   end
 
-  private
   def full?
     @bike_arr.count >= 20
   end
