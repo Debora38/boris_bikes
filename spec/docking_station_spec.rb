@@ -6,25 +6,18 @@ describe DockingStation do
     if subject.bike_arr.empty?
       expect { subject.release_bike }.to raise_error('No bikes left')
     else
-      expect (subject.release_bike).to be_kind_of(Bike)
+      expect(subject.release_bike).to be_kind_of(Bike)
     end
   end
 
   it "should dock a bike" do
     arg_bike = Bike.new
-    p "with curly braces "
-    p { subject.dock(arg_bike) }
-    p "without curly braces "
-    p subject.dock(arg_bike)
-    p "with .last"
-    p subject.dock(arg_bike).last
 
     is_expected.to respond_to(:dock).with(1).argument
     if subject.bike_arr.count == 1
       expect { subject.dock(arg_bike) }.to raise_error('Already full')
-
     else
-      expect (subject.dock(arg_bike).last).to be_kind_of(Bike) #fail test to fix
+      expect(subject.dock(arg_bike).last).to be_kind_of(Bike)
     end
   end
 
